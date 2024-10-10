@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 touchEndPos;
     private void Update()
     {
+        Debug.LogError(gameObject.transform.position.x);
         if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -21,13 +22,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 touchEndPos = touch.position;
 
-                float x = touchEndPos.x - touchStartPos.x;
-                float y = touchEndPos.y - touchStartPos.y;
+                float xDiff = (touchEndPos.x - touchStartPos.x) / speed;
+                float yDiff = (touchEndPos.y - touchStartPos.y) / speed;
 
-                gameObject.transform.position += new Vector3(x, y) * speed;
+                float x = Mathf.Clamp(transform.position.x + xDiff, -2.3f, 2.3f);
+                float y = Mathf.Clamp(transform.position.y + yDiff, -2.3f, 2.3f);
+
+                gameObject.transform.position = new Vector3(x, y, 0);
 
                 touchStartPos = touch.position;
             }
         }
+
+        /*if(Input.touchCount > 0)
+        {
+            gameObject.transform.position = Input.GetTouch(0).position / speed;
+        }*/
     }
 }
