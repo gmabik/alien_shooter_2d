@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public interface IDamageable
 {
+    public void Damage(int damage);
+}
+
+public class PlayerMovement : ShootingObj, IDamageable
+{
+    [SerializeField] private int hp;
+
     [SerializeField] private float speed;
 
     private Vector2 touchStartPos;
     private Vector2 touchEndPos;
+
     private void Update()
     {
-        Debug.LogError(gameObject.transform.position.x);
-        if(Input.touchCount > 0)
+        #region movement
+        if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Began )
@@ -25,18 +33,24 @@ public class PlayerMovement : MonoBehaviour
                 float xDiff = (touchEndPos.x - touchStartPos.x) / speed;
                 float yDiff = (touchEndPos.y - touchStartPos.y) / speed;
 
-                float x = Mathf.Clamp(transform.position.x + xDiff, -2.3f, 2.3f);
-                float y = Mathf.Clamp(transform.position.y + yDiff, -2.3f, 2.3f);
+                float x = Mathf.Clamp(transform.position.x + xDiff, -4.5f, 4.5f);
+                float y = Mathf.Clamp(transform.position.y + yDiff, -8.5f, 8f);
 
                 gameObject.transform.position = new Vector3(x, y, 0);
 
                 touchStartPos = touch.position;
             }
         }
+        #endregion movement
+    }
 
-        /*if(Input.touchCount > 0)
+    public void Damage(int damage)
+    {
+        hp -= damage;
+
+        if(hp < 1)
         {
-            gameObject.transform.position = Input.GetTouch(0).position / speed;
-        }*/
+            //game over
+        }
     }
 }
