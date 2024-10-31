@@ -5,6 +5,8 @@ using UnityEngine;
 public interface IDamageable
 {
     public void Damage(int damage);
+
+    public void Die();
 }
 
 public class PlayerMovement : ShootingObj, IDamageable
@@ -50,7 +52,12 @@ public class PlayerMovement : ShootingObj, IDamageable
 
         if(hp < 1)
         {
-            //game over
+            Die();
         }
+    }
+
+    public void Die()
+    {
+
     }
 }

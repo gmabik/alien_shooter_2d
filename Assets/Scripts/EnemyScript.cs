@@ -26,7 +26,7 @@ public class EnemyScript : ShootingObj, IDamageable
 
     private IEnumerator pathSelection()
     {
-        while(true)
+        while (true)
         {
             placeToGo = new(Random.Range(-5f, 5f), Random.Range(2.75f, 8.75f));
             yield return new WaitForSeconds(1);
@@ -47,9 +47,15 @@ public class EnemyScript : ShootingObj, IDamageable
     {
         hp -= damage;
 
-        if(hp < 1)
+        if (hp < 1)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }
