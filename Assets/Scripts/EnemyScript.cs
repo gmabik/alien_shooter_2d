@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyScript : ShootingObj, IDamageable
 {
@@ -55,7 +57,8 @@ public class EnemyScript : ShootingObj, IDamageable
 
     public void Die()
     {
-        Destroy(gameObject);
+        enemyDeath(gameObject);
     }
 
+    public Action<GameObject> enemyDeath;
 }

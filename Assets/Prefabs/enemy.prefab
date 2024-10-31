@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6528102325434448713}
   - component: {fileID: 5559976861453216285}
   - component: {fileID: 4836162880769821213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4997734733675329673, guid: f3674b9f6dfbf5841adcad22b417307f, type: 3}
   shootCD: 0
-  hp: 100
+  hp: 1
   placeToGo: {x: 0, y: 0}
   lerpCoeff: 0.001
   minShootCD: 0.3
