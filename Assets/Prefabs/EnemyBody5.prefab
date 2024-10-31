@@ -99,13 +99,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3190115185643406166, guid: b27df3603ebab9a4687b4a0ded04bc80, type: 3}
   shootCD: 0
-  hp: 1
+  hp: 3
   isBoss: 0
   minPosToGo: {x: -5, y: 2.75}
   maxPosToGo: {x: 5, y: 8.75}
   lerpCoeff: 0.002
-  minShootCD: 0.3
-  maxShootCD: 0.7
+  minShootCD: 0.6
+  maxShootCD: 1.4
 --- !u!1 &2087576029821731734
 GameObject:
   m_ObjectHideFlags: 0

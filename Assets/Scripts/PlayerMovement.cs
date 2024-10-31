@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
@@ -12,11 +14,18 @@ public interface IDamageable
 public class PlayerMovement : ShootingObj, IDamageable
 {
     [SerializeField] private int hp;
+    [SerializeField] private TMP_Text hpText;
 
     [SerializeField] private float speed;
 
     private Vector2 touchStartPos;
     private Vector2 touchEndPos;
+
+    private void Start()
+    {
+        base.Start();
+        hpText.text = "HP: " + hp;
+    }
 
     private void Update()
     {
@@ -49,8 +58,8 @@ public class PlayerMovement : ShootingObj, IDamageable
     public void Damage(int damage)
     {
         hp -= damage;
-
-        if(hp < 1)
+        hpText.text = "HP: " + hp;
+        if (hp < 1)
         {
             Die();
         }
@@ -58,6 +67,6 @@ public class PlayerMovement : ShootingObj, IDamageable
 
     public void Die()
     {
-
+        SceneManager.LoadScene("Game");
     }
 }
