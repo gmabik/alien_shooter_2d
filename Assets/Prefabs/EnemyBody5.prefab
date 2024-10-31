@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6099629547832572132}
   - component: {fileID: 4333901710137140446}
   - component: {fileID: 372608637736426231}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBody5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,9 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3190115185643406166, guid: b27df3603ebab9a4687b4a0ded04bc80, type: 3}
   shootCD: 0
-  hp: 100
-  placeToGo: {x: 0, y: 0}
-  lerpCoeff: 0.001
+  hp: 1
+  isBoss: 0
+  minPosToGo: {x: -5, y: 2.75}
+  maxPosToGo: {x: 5, y: 8.75}
+  lerpCoeff: 0.002
   minShootCD: 0.3
   maxShootCD: 0.7
 --- !u!1 &2087576029821731734
@@ -114,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5882273365711173526}
   - component: {fileID: 4228341983594978257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_blue003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5789093492316296450}
   - component: {fileID: 8118949742825229687}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7242675516496430651}
   - component: {fileID: 3597544111647255022}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7886520836954603654}
   - component: {fileID: 3332362774105534522}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_blue003 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3978488234091998626}
   - component: {fileID: 5973462501627885591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_blue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8677211396980171824}
   - component: {fileID: 3572251921743005699}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3986108846896790608}
   - component: {fileID: 2953950537198418635}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

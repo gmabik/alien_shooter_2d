@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1495509835319627436}
   - component: {fileID: 3818486025188989119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6870252112049878271}
   - component: {fileID: 4849191806847085079}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green002 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7984398498618711655}
   - component: {fileID: 768268570586704038}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2956990044367693586}
   - component: {fileID: 7236720081816225904}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3390340263225170462}
   - component: {fileID: 3291968794941043977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4059097470300722085}
   - component: {fileID: 2735340252489072574}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608507700771166193}
   - component: {fileID: 950825463169879324}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_green002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4148635171277828323}
   - component: {fileID: 5124691745027061141}
-  m_Layer: 0
+  - component: {fileID: -2408572200454350747}
+  m_Layer: 7
   m_Name: BossBody2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,3 +673,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4347773, y: 3.882464}
   m_EdgeRadius: 0
+--- !u!114 &-2408572200454350747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048753720071098230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c493554848682a48817cfcc8e25afc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4997734733675329673, guid: f3674b9f6dfbf5841adcad22b417307f, type: 3}
+  shootCD: 0
+  hp: 500
+  isBoss: 1
+  minPosToGo: {x: -4, y: 3}
+  maxPosToGo: {x: 4, y: 7.5}
+  lerpCoeff: 0.0005
+  minShootCD: 0.15
+  maxShootCD: 0.35

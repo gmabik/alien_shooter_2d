@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5361806120287440598}
   - component: {fileID: 6265789090295725958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C_blue002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6789740272335062349}
   - component: {fileID: 4646391826328053255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C_blue03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4177154057313305034}
   - component: {fileID: 5218346971365588955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C_blue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3591507726683391809}
   - component: {fileID: 7608573433847114358}
   - component: {fileID: 7344929477644638069}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,10 +347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487cedb337c93bb479a18751eef51c21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  shootCD: 0
-  hp: 0
-  speed: 0
+  bulletPrefab: {fileID: 4997734733675329673, guid: 3170d68f97b316741813ad2f32db780a, type: 3}
+  shootCD: 0.15
+  hp: 9999999
+  speed: 300
 --- !u!1 &6782697690518209027
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +361,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7790465407011763388}
   - component: {fileID: 5386957472601026886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C_blue03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5021994263851877907}
   - component: {fileID: 8202039171277420308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: C_blue002 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

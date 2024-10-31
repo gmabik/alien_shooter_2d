@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7659485217330424847}
   - component: {fileID: 1645670810830931089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3850200568670040486}
   - component: {fileID: 1851897051498172195}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3244126823780161301}
   - component: {fileID: 2774572038640785833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285687178742761775}
   - component: {fileID: 250375817685072627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow001 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6651061196505409597}
   - component: {fileID: 4133088722356620264}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 742412540709977053}
   - component: {fileID: 3496508832037300694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 885772979006275113}
   - component: {fileID: 8745682568088699778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8218438054010044621}
   - component: {fileID: 5771677824034757046}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow03 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369303723852103178}
   - component: {fileID: 881370933456036957}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: C_yellow001 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 1401493828311450922}
   - component: {fileID: 4179734087462508320}
   - component: {fileID: 3259081853613321407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBody3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,8 +857,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4997734733675329673, guid: f3674b9f6dfbf5841adcad22b417307f, type: 3}
   shootCD: 0
-  hp: 100
-  placeToGo: {x: 0, y: 0}
-  lerpCoeff: 0.001
+  hp: 1
+  isBoss: 0
+  minPosToGo: {x: -5, y: 2.75}
+  maxPosToGo: {x: 5, y: 8.75}
+  lerpCoeff: 0.002
   minShootCD: 0.3
   maxShootCD: 0.7
