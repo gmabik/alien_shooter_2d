@@ -9,7 +9,10 @@ public class EnemyScript : ShootingObj, IDamageable
 {
     [SerializeField] private int hp;
 
-    [SerializeField] private Vector2 placeToGo;
+    public bool isBoss;
+    [SerializeField] private Vector2 minPosToGo;
+    [SerializeField] private Vector2 maxPosToGo;
+    private Vector2 placeToGo;
     [SerializeField] private float lerpCoeff;
 
     [SerializeField] private float minShootCD;
@@ -30,7 +33,7 @@ public class EnemyScript : ShootingObj, IDamageable
     {
         while (true)
         {
-            placeToGo = new(Random.Range(-5f, 5f), Random.Range(2.75f, 8.75f));
+            placeToGo = new(Random.Range(minPosToGo.x, maxPosToGo.x), Random.Range(minPosToGo.y, maxPosToGo.y));
             yield return new WaitForSeconds(1);
         }
     }

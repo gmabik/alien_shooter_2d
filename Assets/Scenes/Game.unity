@@ -344,6 +344,10 @@ MonoBehaviour:
   - {fileID: 8419624570999656215, guid: 78971609347f7b748915067c423ee6e5, type: 3}
   enemyMaxCount: 4
   spawnedEnemies: []
+  bossPrefabs:
+  - {fileID: 8699480635947569081, guid: 6c93bdd9448800e4eb8f36e6cf350d73, type: 3}
+  isBossSpawned: 0
+  scoreTreshholdToSpawnBoss: 1000
 --- !u!4 &917525396
 Transform:
   m_ObjectHideFlags: 0

@@ -23,7 +23,15 @@ public class Manager : MonoBehaviour
     [Header("Enemies")]
     [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private int enemyMaxCount;
-    public List<GameObject> spawnedEnemies;
+    [SerializeField] private List<GameObject> spawnedEnemies;
+
+    [Header("Boss")]
+
+    [SerializeField] private List<GameObject> bossPrefabs;
+    [SerializeField] private bool isBossSpawned;
+    private int lastScoreWhenBossWasKilled;
+    [SerializeField] private int scoreTreshholdToSpawnBoss;
+
 
     void Start()
     {
@@ -31,10 +39,7 @@ public class Manager : MonoBehaviour
         highscoreText.text = "Highscore: " + highscore;
 
         spawnedEnemies = new List<GameObject>();
-        while(spawnedEnemies.Count < enemyMaxCount)
-        {
-            SpawnNewEnemy();
-        }
+        SpawnNewEnemy();
     }
 
     void FixedUpdate()
@@ -47,6 +52,8 @@ public class Manager : MonoBehaviour
         score += amount;
         scoreText.text = "Score: " + score;
         ManageHighscore();
+
+        if(score >= (lastScoreWhenBossWasKilled + scoreTreshholdToSpawnBoss) && !isBossSpawned) StartCoroutine(SpawnBoss());
     }
 
     private void ManageHighscore()
@@ -60,9 +67,16 @@ public class Manager : MonoBehaviour
     private void OnEnemyDeath(GameObject enemy)
     {
         spawnedEnemies.Remove(enemy);
+        enemy.GetComponent<EnemyScript>().enemyDeath -= OnEnemyDeath;
+        if (enemy.GetComponent<EnemyScript>().isBoss)
+        {
+            AddScore(1000);
+            isBossSpawned = false;
+            lastScoreWhenBossWasKilled = score;
+        }
+        else AddScore(250);
         Destroy(enemy);
-        AddScore(250);
-        StartCoroutine(RespawnEnemy());
+        if(!isBossSpawned)StartCoroutine(RespawnEnemy());
     }
 
     private IEnumerator RespawnEnemy()
@@ -73,9 +87,27 @@ public class Manager : MonoBehaviour
 
     private void SpawnNewEnemy()
     {
-        GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
-        newEnemy.transform.position = new(Random.Range(-5f, 5f), Random.Range(2.75f, 8.75f), 0);
-        spawnedEnemies.Add(newEnemy);
-        newEnemy.GetComponent<EnemyScript>().enemyDeath += OnEnemyDeath;
+        while (spawnedEnemies.Count < enemyMaxCount && !isBossSpawned)
+        {
+            GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
+            newEnemy.transform.position = new(Random.Range(-5f, 5f), Random.Range(2.75f, 8.75f), 0);
+            spawnedEnemies.Add(newEnemy);
+            newEnemy.GetComponent<EnemyScript>().enemyDeath += OnEnemyDeath;
+        }
+    }
+
+    private IEnumerator SpawnBoss()
+    {
+        isBossSpawned = true;
+        foreach(GameObject enemy in spawnedEnemies)
+        {
+            Destroy(enemy);
+        }
+        spawnedEnemies.Clear();
+        yield return new WaitForSeconds(1f);
+
+        GameObject newBoss = Instantiate(bossPrefabs[Random.Range(0, bossPrefabs.Count)]);
+        newBoss.transform.position = new(0, 5.75f, 0);
+        newBoss.GetComponent<EnemyScript>().enemyDeath += OnEnemyDeath;
     }
 }
