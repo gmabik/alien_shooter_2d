@@ -29,6 +29,11 @@ public class BulletScript : MonoBehaviour, IDamageable
 
     public void Damage(int damage)
     {
+        Die();
+    }
+
+    public void Die()
+    {
         Destroy(gameObject);
     }
 }

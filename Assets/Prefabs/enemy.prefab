@@ -102,7 +102,7 @@ MonoBehaviour:
   shootCD: 0
   hp: 100
   placeToGo: {x: 0, y: 0}
-  lerpCoeff: 0.01
+  lerpCoeff: 0.001
   minShootCD: 0.3
   maxShootCD: 0.7
 --- !u!61 &4836162880769821213
