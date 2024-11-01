@@ -36,7 +36,7 @@ public class Manager : MonoBehaviour
     void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
-        highscoreText.text = "Highscore: " + highscore;
+        highscoreText.text = "" + highscore;
 
         spawnedEnemies = new List<GameObject>();
         SpawnNewEnemy();
@@ -50,7 +50,7 @@ public class Manager : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        scoreText.text = "Score: " + score;
+        scoreText.text = "" + score;
         ManageHighscore();
 
         if(score >= (lastScoreWhenBossWasKilled + scoreTreshholdToSpawnBoss) && !isBossSpawned) StartCoroutine(SpawnBoss());
@@ -60,7 +60,7 @@ public class Manager : MonoBehaviour
     {
         if (score < highscore) return;
         highscore = score;
-        highscoreText.text = "Highscore: " + highscore;
+        highscoreText.text = "" + highscore;
         PlayerPrefs.SetInt("highscore", highscore);
     }
 
