@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c493554848682a48817cfcc8e25afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4997734733675329673, guid: f3674b9f6dfbf5841adcad22b417307f, type: 3}
+  bulletPrefab: {fileID: 6963614999204493421, guid: 6d389fb199986d547ad984d5ceeeaedb, type: 3}
   shootCD: 0
   hp: 3
   isBoss: 0
