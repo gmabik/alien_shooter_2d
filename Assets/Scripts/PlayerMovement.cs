@@ -21,7 +21,7 @@ public class PlayerMovement : ShootingObj, IDamageable
     private Vector2 touchStartPos;
     private Vector2 touchEndPos;
 
-    private void Start()
+    private new void Start()
     {
         base.Start();
         hpText.text = "" + hp;
