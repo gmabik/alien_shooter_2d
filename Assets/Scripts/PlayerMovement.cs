@@ -24,7 +24,7 @@ public class PlayerMovement : ShootingObj, IDamageable
     private void Start()
     {
         base.Start();
-        hpText.text = "HP: " + hp;
+        hpText.text = "" + hp;
     }
 
     private void Update()
@@ -58,7 +58,7 @@ public class PlayerMovement : ShootingObj, IDamageable
     public void Damage(int damage)
     {
         hp -= damage;
-        hpText.text = "HP: " + hp;
+        hpText.text = "" + hp;
         if (hp < 1)
         {
             Die();
