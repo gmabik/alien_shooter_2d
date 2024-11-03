@@ -103,7 +103,7 @@ MonoBehaviour:
   isBoss: 0
   minPosToGo: {x: -5, y: 2.75}
   maxPosToGo: {x: 5, y: 8.75}
-  lerpCoeff: 0.002
+  lerpCoeff: 0.005
   minShootCD: 0.6
   maxShootCD: 1.4
 --- !u!1 &2087576029821731734
