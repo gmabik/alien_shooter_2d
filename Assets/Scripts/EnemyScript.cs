@@ -24,7 +24,7 @@ public class EnemyScript : ShootingObj, IDamageable
         StartCoroutine(pathSelection());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         transform.position = new(Mathf.Lerp(transform.position.x, placeToGo.x, lerpCoeff), Mathf.Lerp(transform.position.y, placeToGo.y, lerpCoeff), transform.position.z);
     }
