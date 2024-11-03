@@ -90,7 +90,8 @@ public class Manager : MonoBehaviour
         while (spawnedEnemies.Count < enemyMaxCount && !isBossSpawned)
         {
             GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
-            newEnemy.transform.position = new(Random.Range(-5f, 5f), Random.Range(2.75f, 8.75f), 0);
+            int a = Random.Range(0, 2);
+            newEnemy.transform.position = new(a == 0? Random.Range(-10f, -5f) : Random.Range(5f, 10f), Random.Range(2.75f, 8.75f), 0);
             spawnedEnemies.Add(newEnemy);
             newEnemy.GetComponent<EnemyScript>().enemyDeath += OnEnemyDeath;
         }
