@@ -24,7 +24,7 @@ public abstract class ShootingObj : MonoBehaviour
     protected void InstBullet() 
     {
         GameObject bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = transform.position + transform.up;
+        bullet.transform.position = transform.position + (transform.up * (gameObject.GetComponent<EnemyScript>() == null ? 1 : -1));
         bullet.transform.eulerAngles = bulletPrefab.transform.eulerAngles + transform.eulerAngles;
         bullet.GetComponent<BulletScript>().shooter = gameObject;
     }
