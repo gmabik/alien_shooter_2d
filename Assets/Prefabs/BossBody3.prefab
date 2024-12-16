@@ -443,8 +443,8 @@ MonoBehaviour:
   minPosToGo: {x: -4, y: 3}
   maxPosToGo: {x: 4, y: 7.5}
   lerpCoeff: 0.005
-  minShootCD: 0.15
-  maxShootCD: 0.35
+  minShootCD: 0.05
+  maxShootCD: 0.1
 --- !u!1 &2991211770000939355
 GameObject:
   m_ObjectHideFlags: 0

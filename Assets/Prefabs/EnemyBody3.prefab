@@ -859,8 +859,8 @@ MonoBehaviour:
   shootCD: 0
   hp: 3
   isBoss: 0
-  minPosToGo: {x: -5, y: 2.75}
-  maxPosToGo: {x: 5, y: 8.75}
+  minPosToGo: {x: -12, y: 0}
+  maxPosToGo: {x: 12, y: 9}
   lerpCoeff: 0.005
-  minShootCD: 0.6
-  maxShootCD: 1.4
+  minShootCD: 0.4
+  maxShootCD: 1

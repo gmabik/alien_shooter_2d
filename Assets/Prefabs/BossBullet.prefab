@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   damage: 10
-  speed: 300
+  speed: 600
 --- !u!50 &4568004623635055259
 Rigidbody2D:
   serializedVersion: 4

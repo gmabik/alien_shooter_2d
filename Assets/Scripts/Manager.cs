@@ -91,7 +91,7 @@ public class Manager : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)]);
             int a = Random.Range(0, 2);
-            newEnemy.transform.position = new(a == 0? Random.Range(-10f, -5f) : Random.Range(5f, 10f), Random.Range(2.75f, 8.75f), 0);
+            newEnemy.transform.position = new(a == 0? Random.Range(-20f, -15f) : Random.Range(15f, 20f), Random.Range(10f, 12f), 0);
             spawnedEnemies.Add(newEnemy);
             newEnemy.GetComponent<EnemyScript>().enemyDeath += OnEnemyDeath;
         }

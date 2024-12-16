@@ -18,8 +18,8 @@ public class PlayerMovement : ShootingObj, IDamageable
 
     [SerializeField] private float speed;
 
-    private Vector2 touchStartPos;
-    private Vector2 touchEndPos;
+    private float horizontal;
+    private float vertical;
 
     private new void Start()
     {
@@ -29,29 +29,21 @@ public class PlayerMovement : ShootingObj, IDamageable
 
     private void Update()
     {
+        #region input
+        horizontal = Input.GetAxisRaw("Horizontal") * speed;
+        vertical = Input.GetAxisRaw("Vertical") * speed;
+
+        #endregion input
+
+    }
+
+    private void FixedUpdate()
+    {
         #region movement
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began )
-            {
-                touchStartPos = touch.position;
-            }
-            else if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Ended)
-            {
-                touchEndPos = touch.position;
+        float x = Mathf.Clamp(transform.position.x + horizontal, -15f, 15f);
+        float y = Mathf.Clamp(transform.position.y + vertical, -8.5f, 0f);
 
-                float xDiff = (touchEndPos.x - touchStartPos.x) / speed;
-                float yDiff = (touchEndPos.y - touchStartPos.y) / speed;
-
-                float x = Mathf.Clamp(transform.position.x + xDiff, -4.5f, 4.5f);
-                float y = Mathf.Clamp(transform.position.y + yDiff, -8.5f, 8f);
-
-                gameObject.transform.position = new Vector3(x, y, 0);
-
-                touchStartPos = touch.position;
-            }
-        }
+        gameObject.transform.position = new Vector3(x, y, 0);
         #endregion movement
     }
 

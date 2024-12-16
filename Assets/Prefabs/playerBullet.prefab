@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooter: {fileID: 0}
   damage: 1
-  speed: 500
+  speed: 800

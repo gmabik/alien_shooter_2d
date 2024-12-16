@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public void Update()
+    public void OnClick()
     {
-        if (Input.touchCount > 0) SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");
     }
 }
