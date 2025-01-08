@@ -1,3 +1,4 @@
+using Fusion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -60,8 +61,8 @@ public class EnemyScript : ShootingObj, IDamageable
 
     public void Die()
     {
-        enemyDeath(gameObject);
+        enemyDeath(GetComponent<NetworkObject>());
     }
 
-    public Action<GameObject> enemyDeath;
+    public Action<NetworkObject> enemyDeath;
 }

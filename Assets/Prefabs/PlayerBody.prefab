@@ -263,6 +263,8 @@ GameObject:
   - component: {fileID: 3591507726683391809}
   - component: {fileID: 7608573433847114358}
   - component: {fileID: 7344929477644638069}
+  - component: {fileID: 2913591805837531837}
+  - component: {fileID: 8868307233776327180}
   m_Layer: 6
   m_Name: PlayerBody
   m_TagString: Untagged
@@ -351,7 +353,42 @@ MonoBehaviour:
   shootCD: 0.15
   hp: 50
   hpText: {fileID: 0}
-  speed: 200
+  speed: 0.2
+--- !u!114 &2913591805837531837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749508311358208992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 2250027192
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 7344929477644638069}
+  - {fileID: 8868307233776327180}
+--- !u!114 &8868307233776327180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749508311358208992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &6782697690518209027
 GameObject:
   m_ObjectHideFlags: 0

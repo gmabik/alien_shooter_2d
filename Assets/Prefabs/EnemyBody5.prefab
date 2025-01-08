@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6099629547832572132}
   - component: {fileID: 4333901710137140446}
   - component: {fileID: 372608637736426231}
+  - component: {fileID: -8511427824266138850}
   m_Layer: 7
   m_Name: EnemyBody5
   m_TagString: Untagged
@@ -106,6 +107,24 @@ MonoBehaviour:
   lerpCoeff: 0.005
   minShootCD: 0.4
   maxShootCD: 1
+--- !u!114 &-8511427824266138850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606117196198933626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 3871336625
+  ObjectInterest: 1
+  Flags: 1
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 372608637736426231}
 --- !u!1 &2087576029821731734
 GameObject:
   m_ObjectHideFlags: 0
