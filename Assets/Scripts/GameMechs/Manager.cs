@@ -67,6 +67,12 @@ public class Manager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void FixedUpdate()
     {
+        if(runner.IsServer && spawnedEnemies == null)
+        {
+            spawnedEnemies = new List<NetworkObject>();
+            if (runner.IsServer) StartCoroutine(FirstEnemySpawn());
+        }
+
         if (!isGameStarted) return;
 
         if (runner.IsServer) AddScore(1);
@@ -137,8 +143,6 @@ public class Manager : MonoBehaviour, INetworkRunnerCallbacks
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
     public void OnConnectedToServer(NetworkRunner runner) 
     {
-        spawnedEnemies = new List<NetworkObject>();
-        if (runner.IsServer) StartCoroutine(FirstEnemySpawn());
     }
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason) { }
     public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token) { }

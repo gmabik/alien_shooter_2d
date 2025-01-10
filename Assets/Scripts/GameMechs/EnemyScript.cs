@@ -25,14 +25,14 @@ public class EnemyScript : ShootingObj, IDamageable
         StartCoroutine(pathSelection());
     }
 
-    private void FixedUpdate()
+    public override void FixedUpdateNetwork()
     {
-        transform.position = new(Mathf.Lerp(transform.position.x, placeToGo.x, lerpCoeff), Mathf.Lerp(transform.position.y, placeToGo.y, lerpCoeff), transform.position.z);
+        if(Runner.IsServer) transform.position = new(Mathf.Lerp(transform.position.x, placeToGo.x, lerpCoeff), Mathf.Lerp(transform.position.y, placeToGo.y, lerpCoeff), transform.position.z);
     }
 
     private IEnumerator pathSelection()
     {
-        while (true)
+        while (Runner.IsServer)
         {
             placeToGo = new(Random.Range(minPosToGo.x, maxPosToGo.x), Random.Range(minPosToGo.y, maxPosToGo.y));
             yield return new WaitForSeconds(1);
@@ -41,27 +41,29 @@ public class EnemyScript : ShootingObj, IDamageable
 
     private new IEnumerator Shoot()
     {
-        while (true)
+        while (Runner.IsServer)
         {
-            InstBullet();
+            RpcInstBullet();
             shootCD = Random.Range(minShootCD, maxShootCD);
             yield return new WaitForSeconds(shootCD);
         }
     }
 
-    public void Damage(int damage)
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void RpcDamage(int damage)
     {
         hp -= damage;
 
         if (hp < 1)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
         enemyDeath(GetComponent<NetworkObject>());
+        yield return null;
     }
 
     public Action<NetworkObject> enemyDeath;

@@ -1,3 +1,4 @@
+using Fusion;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,15 +8,17 @@ using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
-    public void Damage(int damage);
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void RpcDamage(int damage);
 
-    public void Die();
+    public IEnumerator Die();
 }
 
 public class PlayerMovement : ShootingObj, IDamageable
 {
     [SerializeField] private int hp;
     public TMP_Text hpText;
+    [SerializeField] private GameObject playerPointer;
 
     [SerializeField] private float speed;
 
@@ -27,6 +30,7 @@ public class PlayerMovement : ShootingObj, IDamageable
         base.Start();
         hpText = LobbyManager.Instance.hpText;
         hpText.text = "" + hp;
+        if(HasInputAuthority) playerPointer.SetActive(true);
     }
 
     private void Update()
@@ -54,18 +58,33 @@ public class PlayerMovement : ShootingObj, IDamageable
         #endregion movement
     }
 
-    public void Damage(int damage)
+    [Rpc(RpcSources.StateAuthority, RpcTargets.All)]
+    public void RpcDamage(int damage)
     {
         hp -= damage;
-        hpText.text = "" + hp;
+
+        if (HasInputAuthority) hpText.text = "" + hp;
+
         if (hp < 1)
         {
-            Die();
+            StartCoroutine(Die());
         }
     }
 
-    public void Die()
+    public IEnumerator Die()
     {
-        Application.Quit();
+        if (!Runner.IsServer)
+        {
+            Runner.Shutdown();
+            SceneManager.LoadScene("Menu");
+        }
+        else if(!HasInputAuthority) Runner.Despawn(Object);
+
+        yield return new WaitForSeconds(0.3f);
+        if (HasInputAuthority)
+        {
+            Runner.Shutdown();
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

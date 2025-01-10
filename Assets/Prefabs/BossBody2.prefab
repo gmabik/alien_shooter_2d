@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 5124691745027061141}
   - component: {fileID: -2408572200454350747}
   - component: {fileID: -152959432063802818}
+  - component: {fileID: -3135870161442697901}
   m_Layer: 7
   m_Name: BossBody2
   m_TagString: Untagged
@@ -709,7 +710,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3488803763
   ObjectInterest: 1
-  Flags: 1
+  Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: -2408572200454350747}
+  - {fileID: -3135870161442697901}
+--- !u!114 &-3135870161442697901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048753720071098230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0

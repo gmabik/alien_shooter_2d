@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4333901710137140446}
   - component: {fileID: 372608637736426231}
   - component: {fileID: -8511427824266138850}
+  - component: {fileID: -6318172960133421093}
   m_Layer: 7
   m_Name: EnemyBody5
   m_TagString: Untagged
@@ -98,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c493554848682a48817cfcc8e25afc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3190115185643406166, guid: b27df3603ebab9a4687b4a0ded04bc80, type: 3}
+  bulletPrefab: {fileID: 6963614999204493421, guid: 6d389fb199986d547ad984d5ceeeaedb, type: 3}
   shootCD: 0
   hp: 3
   isBoss: 0
@@ -121,10 +122,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3871336625
   ObjectInterest: 1
-  Flags: 1
+  Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 372608637736426231}
+  - {fileID: -6318172960133421093}
+--- !u!114 &-6318172960133421093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606117196198933626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &2087576029821731734
 GameObject:
   m_ObjectHideFlags: 0

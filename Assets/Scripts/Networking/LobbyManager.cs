@@ -118,13 +118,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     private void OnLeaveRoom()
     {
-        lobbyPanel.SetActive(true);
-        currentRoomPanel.SetActive(false);
-    }
-
-    public void LeaveLobby()
-    {
-        runner.Shutdown();
+        SceneManager.LoadScene("Menu");
     }
 
     public void OnClickPlay()
